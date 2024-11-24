@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小宇航员走动的动画</title>
+    <style>
+        /* 设置页面背景 */
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* 宇航员容器 */
+        .astronaut {
+            position: absolute;
+            bottom: 50px; /* 设置宇航员底部离地面的位置 */
+            left: 50px; /* 初始位置 */
+            width: 100px; /* 宇航员图片的宽度 */
+            height: auto;
+            animation: moveAstronaut 5s infinite linear;
+        }
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* 宇航员走动的容器 */
+        .astronaut {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            width: 100px; /* 单步宇航员图像的宽度 */
+            height: 150px; /* 图像的高度 */
+            background-image: url('cat1.jpg'); /* 使用图像序列 */
+            background-position: 0 0; /* 从第一个步伐开始 */
+            animation: walkCycle 1s steps(10) infinite; /* 10 帧步伐循环 */
+        }
+
+        /* 定义步伐动画 */
+        @keyframes walkCycle {
+            100% {
+                background-position: -1000px 0; /* 移动到最后一帧 */
+            }
+        }
+
+        /* 定义动画 */
+        @keyframes moveAstronaut {
+            0% {
+                left: 50px; /* 从页面左边开始 */
+            }
+            50% {
+                left: 50vw; /* 动画进行到一半时，宇航员的位置是屏幕的 50% */
+            }
+            100% {
+                left: 100vw; /* 最终位置，宇航员走到屏幕右边 */
+            }
+        }
+
+
+        /* 可选：你可以增加宇航员行走的效果，如腿部动作（用多个图片帧） */
+    </style>
+</head>
+<body>
+
+    <!-- 宇航员的图片 -->
+    <img src="cat1.jpg" alt="Astronaut" class="astronaut">
+
+</body>
+</html>
